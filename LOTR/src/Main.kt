@@ -52,9 +52,42 @@ fun main() {
     Aqui pequeñonoCambiante no puede cambiar todos los elementos de dentro de la lista uno por uno ya que es var y no
     puedes cambiar todos los elementos de dentro de una tacada ya que es Listof
     */
-
     val pequeñonoCambainte= listOf(0,1,2,3)
+
+
+    //Funciones lambda ejemplos:
     var pequeñonoCambainteOrdenado= pequeñonoCambainte.sorted()
 
+    fun esPar(parametro: Int): Boolean{ //Esto es una sentencia porque hace algo
+        return parametro%2==0
+    }
 
+    fun  esPar2(parametro: Int): Boolean= parametro%2==0 //esto es una expresión porque tiene un igual
+
+    fun vacia(palabritas:String): Unit=print(palabritas)
+
+    vacia("Esta es una función vacía")
+
+
+    //Revisar despues porque no entiendo nada
+    fun unirVacias (funcion: (String)->Unit, mundo:String):String{
+            vacia("Hello world")
+        return mundo
+    }
+    fun suma(a:Int, b:Int):Int=a+b
+
+    fun sumaEntero(funcion:(n1:Int,n2:Int)->Int, otroNumero:String){
+        otroNumero.toInt()+suma(a=2, b = 4)
+    }
+
+    //Kotlin nos pide que rellenemos las funciones dentro de la llamada
+
+    fun resta(a:Int,b:Int):Int{
+        return a-b
+    }
+
+    fun sumaYresta(resta:(n4:Int, n5:Int)->Int, num:Int):Int{
+        return resta(1,5)+num
+    }
+    sumaYresta(::resta,5)
 }
